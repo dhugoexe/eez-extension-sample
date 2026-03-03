@@ -1,0 +1,34 @@
+{
+    "name": "eez-ext-sample",
+    "id": "eez-ext-sample",
+    "version": "1.0.0",
+    "author": "YourName",
+    "image": "image.png",
+    "description": "Sample EEZ Studio extension with action components",
+    "repository": "https://github.com/yourusername/eez-ext-sample",
+    "license": "GPL-3.0-only",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "cd src && tsc",
+        "watch": "cd src && tsc -w",
+        "publish": "npm publish ."
+    },
+    "eez-studio": {
+        "node-module": true
+    },
+    "keywords": [
+        "eez-studio-pext",
+        "eez-studio",
+        "eez-flow"
+    ],  
+    "devDependencies": {
+        "@types/node": "^25.3.3",
+        "@types/react": "^18.0.6"
+    },
+    "prettier": {
+        "printWidth": 80,
+        "tabWidth": 4,
+        "trailingComma": "none",
+        "arrowParens": "avoid"
+    }
+}
