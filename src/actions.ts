@@ -37,9 +37,6 @@ export const ACTIONS: IActionComponentDefinition[] = [
         icon: ICON,
         componentHeaderColor: HEADER_COLOR,
 
-        flowComponentId: 10001,
-        nativeExecute: "Sample_GetData",
-
         inputs: [],
         outputs: [],
 
@@ -58,16 +55,14 @@ export const ACTIONS: IActionComponentDefinition[] = [
 
         execute(context: IDashboardComponentContext) {
             done(context);
-        }
+        },
+        isNative: false
     },
     {
         name: "SetData",
         componentPaletteLabel: "Set Data",
         icon: ICON,
         componentHeaderColor: HEADER_COLOR,
-
-        flowComponentId: 10002,
-        nativeExecute: "Sample_SetData",
 
         inputs: [],
         outputs: [],
@@ -91,6 +86,7 @@ export const ACTIONS: IActionComponentDefinition[] = [
                 context.logInfo(`[SetData] ${JSON.stringify(data)}`);
             }
             done(context);
-        }
+        },
+        isNative: true
     },
 ];

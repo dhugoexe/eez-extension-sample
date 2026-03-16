@@ -322,16 +322,10 @@ export interface IActionComponentDefinition {
 
     execute?: (context: IDashboardComponentContext) => void;
 
-    // Unique component type ID for LVGL target build (range: 10000–10099).
-    // Required when nativeExecute is set. Must be unique across all extensions.
-    flowComponentId?: number;
-
-    // Base name used to generate typed C wrapper functions for LVGL target.
-    // The build generates {nativeExecute}_ctx_t, typed input getters,
-    // output propagators, and a {nativeExecute}_execute(ctx) declaration
-    // that you must implement in your firmware.
-    // Requires flowComponentId to be set.
-    nativeExecute?: string;
+    // If true, the build generates an extern C prototype and a registerComponent()
+    // call. The user provides the implementation in their firmware project.
+    // Generated function: void eez_flow_ext_<sanitized_name>(FlowState*, unsigned)
+    isNative?: boolean;
 }
 
 export interface IMessageFromWorker {
